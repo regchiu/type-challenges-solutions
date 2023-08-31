@@ -1,0 +1,14 @@
+{
+  "name": "type-challenges-saves",
+  "private": "true",
+  "version": "0.0.0",
+  "repository": "https://github.com/regchiu/type-challenges-saves.git",
+  "author": "regchiu <regx1385@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "3.0.3"
+  }
+}
