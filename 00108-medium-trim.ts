@@ -13,18 +13,18 @@ type cases = [
 ]
 
 // ============= Your Code Here =============
-type Space = ' ' | '\n' | '\t'
+type WhiteSpace = ' ' | '\n' | '\t'
 
-type TrimLeft<S extends string> = S extends `${Space}${infer Right}`
+type TrimLeft<S extends string> = S extends `${WhiteSpace}${infer Right}`
   ? TrimLeft<Right>
   : S
 
-type TrimRight<S extends string> = S extends `${infer Left}${Space}`
+type TrimRight<S extends string> = S extends `${infer Left}${WhiteSpace}`
   ? TrimRight<Left>
   : S
 
 type Trim<S extends string> = S extends
-  | `${Space}${infer U}`
-  | `${infer U}${Space}`
+  | `${WhiteSpace}${infer U}`
+  | `${infer U}${WhiteSpace}`
   ? Trim<U>
   : S
