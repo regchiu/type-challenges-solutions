@@ -12,7 +12,7 @@ type cases = [
 ]
 
 // ============= Your Code Here =============
-type IndexOf<T extends unknown[], U, Counter extends 1[] = []> = T extends [
+type IndexOf<T, U, Counter extends 1[] = []> = T extends [
   infer Head,
   ...infer Tail
 ]
