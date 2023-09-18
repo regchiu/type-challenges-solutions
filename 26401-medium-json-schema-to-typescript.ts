@@ -181,9 +181,14 @@ type JSONSchema2TS<T> = T extends { type: infer Type }
       ? T extends { required: infer Required extends unknown[] }
         ? Omit<
             {
-              [P in Required[number] & keyof Properties]: JSONSchema2TS<Properties[P]>
+              [P in Required[number] & keyof Properties]: JSONSchema2TS<
+                Properties[P]
+              >
             } & {
-              [P in Exclude<keyof Properties, Required[number]>]?: JSONSchema2TS<Properties[P]>
+              [P in Exclude<
+                keyof Properties,
+                Required[number]
+              >]?: JSONSchema2TS<Properties[P]>
             },
             never
           >
