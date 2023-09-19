@@ -38,11 +38,9 @@ SimpleVue({
 })
 
 // ============= Your Code Here =============
-type Computed<T> = T extends Record<string, (...args: any) => any>
-  ? {
-      [P in keyof T]: ReturnType<T[P]>
-    }
-  : never
+type Computed<T> = {
+  [P in keyof T]: T[P] extends (...args: any) => infer R ? R : T[P]
+}
 
 declare function SimpleVue<D, C, M>(
   options: {
@@ -50,4 +48,4 @@ declare function SimpleVue<D, C, M>(
     computed: C
     methods: M
   } & ThisType<D & Computed<C> & M>
-): any
+): D & Computed<C> & M
