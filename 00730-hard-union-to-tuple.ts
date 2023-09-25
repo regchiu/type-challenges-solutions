@@ -35,13 +35,13 @@ type cases = [
 
 // ============= Your Code Here =============
 type UnionToIntersection<T> = (
-  T extends T ? (arg: T) => unknown : never
+  T extends unknown ? (arg: T) => unknown : never
 ) extends (arg: infer R) => unknown
   ? R
   : never
 
 type LastInUnion<T> = UnionToIntersection<
-  T extends T ? (arg: T) => unknown : never
+  T extends unknown ? (arg: T) => unknown : never
 > extends (arg: infer R) => unknown
   ? R
   : never

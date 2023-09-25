@@ -47,7 +47,7 @@ type Get<T, Path> = Path extends `${infer Head}.${infer Tail}`
   : never
 
 type UnionToIntersection<T> = (
-  T extends T ? (arg: T) => unknown : never
+  T extends unknown ? (arg: T) => unknown : never
 ) extends (arg: infer R) => unknown
   ? R
   : never

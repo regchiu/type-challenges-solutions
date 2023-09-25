@@ -12,12 +12,12 @@ type cases = [
 ]
 
 // ============= Your Code Here =============
-type ToUnionOfFunction<T> = T extends T ? (arg: T) => unknown : never
+type ToUnionOfFunction<T> = T extends unknown ? (arg: T) => unknown : never
 
 type UnionToIntersection<U> = ToUnionOfFunction<U> extends (
-  a: infer U
+  arg: infer R
 ) => unknown
-  ? U
+  ? R
   : never
 
-type Test = ToUnionOfFunction<(() => 'foo') | ((i: 42) => true)>
+type Test = ToUnionOfFunction<'foo' | 42 | true>
