@@ -19,9 +19,9 @@ type cases = [
 
 // ============= Your Code Here =============
 type CamelCase<S extends string> = S extends Lowercase<S>
-  ? S extends `${infer Head}_${infer Body}${infer Rest}`
+  ? S extends `${infer Head}_${infer Body}${infer Tail}`
     ? Body extends Uppercase<Body>
-      ? `${Head}_${CamelCase<`${Body}${Rest}`>}`
-      : `${Head}${Uppercase<Body>}${CamelCase<Rest>}`
+      ? `${Head}_${CamelCase<`${Body}${Tail}`>}`
+      : `${Head}${Uppercase<Body>}${CamelCase<Tail>}`
     : S
   : CamelCase<Lowercase<S>>
