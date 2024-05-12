@@ -1,8 +1,8 @@
 {
-  "name": "type-challenges-saves",
+  "name": "type-challenges-solutions",
   "private": "true",
   "version": "0.0.0",
-  "repository": "https://github.com/regchiu/type-challenges-saves.git",
+  "repository": "https://github.com/regchiu/type-challenges-solutions.git",
   "author": "regchiu <regx1385@gmail.com>",
   "license": "MIT",
   "scripts": {
