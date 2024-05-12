@@ -4,14 +4,14 @@
   </a>
 </p>
 
-# type-challenges-saves
+# type-challenges-solutions
 
-My saves of VSCode type challenges extension.
+My solutions of VSCode type challenges extension.
 
 ## Setup
 
 Install [Type Challenges](https://marketplace.visualstudio.com/items?itemName=YRM.type-challenges) then set your path in `settings.json` of VScode.
 
 ```json
-"typeChallenges.workspaceFolder": "/path/type-challenges-saves"
+"typeChallenges.workspaceFolder": "/path/type-challenges-solutions"
 ```
